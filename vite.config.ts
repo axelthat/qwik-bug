@@ -12,5 +12,13 @@ export default defineConfig(() => {
         "Cache-Control": "public, max-age=600",
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: (source, id) =>
+            id.endsWith('app.scss') ? source : '',
+        },
+      },
+    },
   }
 })
